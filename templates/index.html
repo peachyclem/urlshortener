@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block title %}Url Shortener{% endblock %}
+{% block style %}resources/style.css{% endblock %}
+
+{% block content %}
+<div id="container">
+    <h1 id="title">URL Shortener</h1>
+    <form class="form-group" method="post" action="/createshort">
+        <span>https://</span>
+        <input class="form-field" name="url" type="text" placeholder="example.com">
+        <button class="create-btn" type="submit">Create</button>
+    </form>
+    {% if newUrl %}
+        <p>Share this Url:</p>
+        <p>{{ newUrl }}</p>
+    {% endif %}
+    {% if err %}
+        <p>Error:</p>
+        <p>{{ err }}</p>
+    {% endif %}
+</div>
+<p></p>
+{% endblock %}

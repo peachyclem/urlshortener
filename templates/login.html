@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block title %}Url Shortener{% endblock %}
+{% block style %}resources/style.css{% endblock %}
+
+{% block content %}
+<div id="container">
+    <h1>Login</h1>
+    <form action="/login" method="post">
+        <label for="usr">Username:</label>
+        <input id="usr" type="text" name="username">
+        <label for="pwd">Password:</label>
+        <input id="pwd" type="password" name="password">
+        <button type="submit">Login</button>
+    </form>
+    {% if err %}
+        <p>Error:</p>
+        <p>{{ err }}</p>
+    {% endif %}
+</div>
+<p></p>
+{% endblock %}

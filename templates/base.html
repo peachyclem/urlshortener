@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{% block title %}{% endblock %}</title>
+        <link rel="stylesheet" href="static/{% block style %}{% endblock %}">
+        
+    </head>
+    <body>
+        <nav>
+            <ul>
+                <li class="nav-left {% if request.path == '/' %}active{% endif %}" ><a href="/">Create</a></li>
+                {% if user.isLoggedIn %}
+                <li class="nav-left  {% if request.path == '/dashboard' %}active{% endif %}" ><a href="/dashboard">Dashboard</a></li>
+                <li class="nav-right" ><a href="/logout">Logout</a></li>
+                {% else %}
+                <li class="nav-right {% if request.path == '/login' %}active{% endif %}"><a  href="/login">Login</a></li>
+                <li class="nav-right {% if request.path == '/register' %}active{% endif %}"><a href="/register">Register</a></li>
+                {% endif %}
+            </ul>
+            
+        </nav>
+        {% block content %}
+        {% endblock %}
+    </body>
+</html>
