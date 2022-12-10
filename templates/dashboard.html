@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block title %}Url Shortener{% endblock %}
+{% block style %}resources/style.css{% endblock %}
+
+{% block content %}
+<div id="container">
+    <h1 id="title">Dashboard</h1>
+    <div id="urlContainer">
+        {% for url in urls %}
+        <a class="url-button" href="dashboard/{{url['id']}}">
+                <span>{{url['url']}}</span>
+        </a>
+        {% endfor %}
+    </div>
+</div>
+<p></p>
+{% endblock %}

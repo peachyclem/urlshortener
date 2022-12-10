@@ -1,0 +1,40 @@
+
+
+{% extends "base.html" %}
+
+{% block title %}Url Shortener{% endblock %}
+{% block style %}resources/style.css{% endblock %}
+
+{% block content %}
+<div id="container">
+    <h1 id="title">Dashboard</h1>
+    <div id="clickContainer">
+        <p>Total Clicks: {{data.total}}</p>
+        {% for click in data.recent %}
+        <div class="click-info">
+            <div>
+                {% if click.device.isMobile %}
+                <i class="fas fa-mobile-alt"></i>
+                {% else %}
+                <i class="fas fa-desktop"></i>
+                {% endif %}
+                <span class="deviceid">{{click.device.string}}</span>
+                <span class="timestamp">{{ click.time }}</span>
+            </div>
+        </div>
+        <div class="click-hover">
+            <div class="info-group">
+                <div class="info-1" >IP:</div>
+                <div class="info-2" >{{click.ip}}</div>
+            </div>
+            <div class="info-group">
+                <div class="info-1" >User Agent:</div>
+                <div class="info-2" >{{click.device.userAgent}}</div>
+            </div>            
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+
+{% endblock %}

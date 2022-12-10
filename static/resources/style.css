@@ -71,6 +71,26 @@ nav li.active a {
     cursor:pointer;
 }
 
+.url-button{
+  border: 1px solid #b9b9b9;
+  padding: 4px;
+  border-radius: 4px;
+  background-color: aliceblue;
+  margin-bottom: 5px;
+  display: block;
+  overflow: hidden;
+}
+
+a.url-button:link {
+  text-decoration: inherit;
+  color: inherit;
+}
+
+a.url-button:visited {
+  text-decoration: inherit;
+  color: inherit;
+}
+
 .create-btn:hover{
     color: var(--group-color-focus);
     background: var(--group-background-focus);
@@ -182,3 +202,79 @@ nav li.active a {
     box-sizing: border-box;
     -webkit-font-smoothing: antialiased;
   }
+
+#clickContainer{
+    margin-top: 15px;
+}
+
+.click-info{
+    flex: 1 1 auto;
+    margin: 10px;
+    background-color: aliceblue;
+    padding: 10px;
+    border-radius: 10px;
+    border:1px solid black; 
+}
+
+.click-info span{
+    font-weight: bold;
+    color: #99A3BA;
+}
+
+.timestamp{
+  float:right;
+}
+
+.click-hover{
+  display:none;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.click-info:hover + .click-hover{
+  display: none;
+  position: absolute;
+  display: block;
+  background-color: aliceblue;
+  width: 300px;
+  transform: translateY(-11px) translateX(281px);
+  border-left: 1px solid black;
+  border-bottom: 1px solid black;
+  border-right: 1px solid black;
+  padding: 4px;
+}
+
+.click-info:hover{
+  border-bottom-right-radius: 0px;
+}
+
+.info-group > .info-1, .info-group > .info-2{
+  display:inline;
+}
+
+.info-2{
+  font-weight: bold;
+  color: #99A3BA;
+}
+
+.error-msg{
+  color: red;
+  padding: 0;
+  margin: 0;
+  margin-top: 2px;
+  margin-left: 2px;
+}
+
+.account-form{
+  width:200px;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+.account-form input{
+  width:100%;
+}
+
+.account-form > div{
+  margin-bottom:10px;
+}

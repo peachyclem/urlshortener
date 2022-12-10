@@ -5,17 +5,20 @@
 
 {% block content %}
 <div id="container">
-    <h1>Login</h1>
-    <form action="/login" method="post">
-        <label for="usr">Username:</label>
-        <input id="usr" type="text" name="username">
-        <label for="pwd">Password:</label>
-        <input id="pwd" type="password" name="password">
+    <h1 id="title">Login</h1>
+    <form class="account-form" action="/login" method="post">
+        <div>
+            <label for="usr">Username:</label>
+            <input id="usr" type="text" name="username">
+        </div>
+        <div>
+            <label for="pwd">Password:</label>
+            <input id="pwd" type="password" name="password">
+        </div>
         <button type="submit">Login</button>
     </form>
     {% if err %}
-        <p>Error:</p>
-        <p>{{ err }}</p>
+        <p class="error-msg">{{ err }}</p>
     {% endif %}
 </div>
 <p></p>
